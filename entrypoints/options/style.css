@@ -1,0 +1,32 @@
+.bg-grid {
+  background-image: url("/images/bg.svg");
+  background-color: #f2f2f2;
+  background-size: 16px;
+}
+
+.dark .bg-grid {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Color Mode transition */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2147483646;
+}
+
+.dark::view-transition-old(root) {
+  z-index: 2147483646;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 1;
+}

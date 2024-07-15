@@ -1,0 +1,22 @@
+{
+  "eslint.enable": true,
+  "prettier.enable": true,
+  "css.customData": [".vscode/tailwind.json"],
+  "cSpell.words": [
+    "bumpp",
+    "changelogithub",
+    "clsx",
+    "iconify",
+    "lezer",
+    "nocheck",
+    "nuxt",
+    "pinia",
+    "shadcn",
+    "sonner",
+    "unplugin",
+    "unref",
+    "vaul",
+    "vitesse",
+    "vueuse"
+  ]
+}

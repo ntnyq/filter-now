@@ -1,0 +1,10 @@
+{
+  "extends": "./.wxt/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@": ["."],
+      "@/*": ["./*"]
+    },
+    "types": ["unplugin-icons/types/vue"]
+  }
+}
