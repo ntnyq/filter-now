@@ -31,9 +31,6 @@ export default defineConfig({
         description: 'Open the Options page',
       },
     } satisfies Record<Command, Manifest.WebExtensionManifestCommandsType>,
-    content_security_policy: {
-      extension_pages: `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`,
-    },
   },
 
   runner: {

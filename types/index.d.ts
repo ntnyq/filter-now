@@ -8,9 +8,9 @@ export type FilterType =
   | 'grayscale'
   | 'hue-rotate'
   | 'invert'
+  | 'opacity'
   | 'saturate'
   | 'sepia'
-  | 'opacity'
 
 /**
  * @file Copied from `type-fest`

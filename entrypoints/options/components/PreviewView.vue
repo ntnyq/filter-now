@@ -4,17 +4,16 @@ import { ACTION } from '@/constants/meta'
 import { actionBus } from '@/hooks/useEventBus'
 import { useAppStore } from '@/stores/app'
 import { downloadImageFromDom } from '@/utils/html2canvas'
-import { useFilter } from '@/hooks/useFilter'
+import { filterList } from '@/constants/filter'
 import RadixIconsDelete from '~icons/ri/delete-bin-5-line'
 
 const appStore = useAppStore()
-const { filterList } = useFilter()
 
 const imageWrapperRef = ref<HTMLElement>()
 
 const imageWrapperStyle = computed(() => {
   if (!appStore.filterValues) return ''
-  const filterValues = filterList.value.map(filter => {
+  const filterValues = filterList.map(filter => {
     if (appStore.filterValues![filter.name]?.[0] === filter.defaultValue) {
       return ''
     }
@@ -29,6 +28,11 @@ actionBus.on(action => {
     downloadImageFromDom(imageWrapperRef.value)
   }
 })
+
+function onClearImage() {
+  appStore.setImageDataUrl('')
+  appStore.resetFilterValues()
+}
 </script>
 
 <template>
@@ -46,7 +50,7 @@ actionBus.on(action => {
       </div>
 
       <Button
-        @click="appStore.setImageDataUrl('')"
+        @click="onClearImage"
         class="absolute top-0 right-0"
         size="icon"
         variant="destructive"

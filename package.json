@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "private": true,
   "packageManager": "pnpm@9.5.0",
-  "description": "Add CSS filter effect.",
+  "description": "An offline tool help user to add CSS based filter to image and save it.",
   "repository": "ntnyq/filter-now",
   "scripts": {
     "build": "wxt build",
