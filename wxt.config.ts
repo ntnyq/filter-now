@@ -12,10 +12,12 @@ import { resolve } from './scripts/utils'
 import type { Command } from '@/constants/command'
 import type { Manifest } from 'wxt/browser'
 
+const CSP = `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`
+
 export default defineConfig({
   outDir: 'dist',
 
-  manifest: {
+  manifest: ({ browser }) => ({
     name: 'Filter Now',
     permissions: [
       'storage',
@@ -23,9 +25,15 @@ export default defineConfig({
       'tabs',
     ],
     homepage_url: 'https://github.com/ntnyq/filter-now',
-    content_security_policy: {
-      extension_pages: `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`,
-    },
+    ...(browser === 'chrome'
+      ? {
+          content_security_policy: {
+            extension_pages: CSP,
+          },
+        }
+      : {
+          content_security_policy: CSP,
+        }),
     commands: {
       openOptionsPage: {
         suggested_key: {
@@ -34,7 +42,7 @@ export default defineConfig({
         description: 'Open the Options page',
       },
     } satisfies Record<Command, Manifest.WebExtensionManifestCommandsType>,
-  },
+  }),
 
   runner: {
     chromiumArgs: ['--auto-open-devtools-for-tabs'],
