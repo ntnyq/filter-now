@@ -20,23 +20,33 @@ import RadixIconsSun from '~icons/radix-icons/sun'
         <small>v{{ version }}</small>
       </div>
       <div class="flex items-center gap-1">
-        <Button
-          @click="toggleDark"
-          variant="ghost"
-          size="icon"
-        >
-          <RadixIconsMoon v-if="isDark" />
-          <RadixIconsSun v-else />
-        </Button>
-        <Button
-          as="a"
-          href="https://github.com/ntnyq/filter-now"
-          target="_blank"
-          variant="ghost"
-          size="icon"
-        >
-          <RadixIconsGithubLogo />
-        </Button>
+        <Tooltip>
+          <TooltipTrigger as-child>
+            <Button
+              @click="toggleDark"
+              variant="ghost"
+              size="icon"
+            >
+              <RadixIconsMoon v-if="isDark" />
+              <RadixIconsSun v-else />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>Toggle Color Mode</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger as-child>
+            <Button
+              as="a"
+              href="https://github.com/ntnyq/filter-now"
+              target="_blank"
+              variant="ghost"
+              size="icon"
+            >
+              <RadixIconsGithubLogo />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>GitHub Repository</TooltipContent>
+        </Tooltip>
       </div>
     </div>
   </div>

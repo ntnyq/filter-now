@@ -49,14 +49,19 @@ function onClearImage() {
         />
       </div>
 
-      <Button
-        @click="onClearImage"
-        class="absolute top-0 right-0"
-        size="icon"
-        variant="destructive"
-      >
-        <RadixIconsDelete />
-      </Button>
+      <Tooltip>
+        <TooltipTrigger as-child>
+          <Button
+            @click="onClearImage"
+            class="absolute top-0 right-0"
+            size="icon"
+            variant="destructive"
+          >
+            <RadixIconsDelete />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>Clear Current Image</TooltipContent>
+      </Tooltip>
     </div>
   </div>
 </template>

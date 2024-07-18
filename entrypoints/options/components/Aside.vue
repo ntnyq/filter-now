@@ -1,14 +1,27 @@
 <script lang="ts" setup>
+import { useClipboard } from '@vueuse/core'
 import { ACTION } from '@/constants/meta'
 import { actionBus } from '@/hooks/useEventBus'
 import { useAppStore } from '@/stores/app'
 import { pascalCase } from '@/utils'
 import { filterList } from '@/constants/filter'
+import { useToast } from '@/components/ui/toast'
+import RiSave3Fill from '~icons/ri/save-3-fill'
+import RiResetLeftLine from '~icons/ri/reset-left-line'
+import RiCss3Fill from '~icons/ri/css3-fill'
 
 const appStore = useAppStore()
+const { toast } = useToast()
+const { copy } = useClipboard()
 
 function onUserAction(key: string) {
   actionBus.emit(key)
+}
+async function onCopyCode() {
+  await copy(appStore.rawCSSCode)
+  toast({
+    title: 'CSS code copied to clipboard.',
+  })
 }
 </script>
 
@@ -19,7 +32,7 @@ function onUserAction(key: string) {
         <div
           v-for="filter in filterList"
           :key="filter.name"
-          class="grid gap-4 px-6 py-4"
+          class="grid gap-4 px-4 py-4"
         >
           <div class="flex items-center justify-between">
             <Label
@@ -56,19 +69,83 @@ function onUserAction(key: string) {
       </ScrollArea>
     </div>
     <Separator />
-    <div class="h-[80px] flex gap-2 px-4 justify-center items-center flex-wrap">
-      <Button
-        @click="onUserAction(ACTION.download)"
-        variant="default"
-      >
-        Save Image
-      </Button>
-      <Button
-        @click="appStore.resetFilterValues"
-        variant="default"
-      >
-        Reset All
-      </Button>
+    <div class="h-[80px] flex gap-4 px-4 justify-center items-center flex-wrap">
+      <Tooltip>
+        <TooltipTrigger as-child>
+          <Button
+            @click="onUserAction(ACTION.download)"
+            variant="default"
+            size="icon"
+          >
+            <RiSave3Fill />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent> Save Image </TooltipContent>
+      </Tooltip>
+      <Dialog>
+        <Tooltip>
+          <TooltipTrigger as-child>
+            <DialogTrigger as-child>
+              <Button
+                variant="default"
+                size="icon"
+              >
+                <RiCss3Fill />
+              </Button>
+            </DialogTrigger>
+          </TooltipTrigger>
+          <TooltipContent> View CSS Code </TooltipContent>
+        </Tooltip>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>CSS Code</DialogTitle>
+            <DialogDescription>This is generated CSS code.</DialogDescription>
+          </DialogHeader>
+          <div class="relative py-4 w-full overflow-x-auto">
+            <div
+              v-if="appStore.rawCSSCode"
+              v-html="appStore.highlightedCode"
+              class="font-mono text-lg py-4 w-full overflow-x-auto"
+            />
+            <div
+              v-else
+              class="p-10 justify-center text-lg text-zinc-500 bg-zinc-100 flex items-center dark:bg-zinc-800 dark:text-zinc-500"
+            >
+              No CSS code generated.
+            </div>
+          </div>
+          <DialogFooter class="!justify-center !gap-4">
+            <Button
+              @click="onCopyCode"
+              v-if="appStore.rawCSSCode"
+              type="button"
+              variant="default"
+            >
+              Copy Code
+            </Button>
+            <DialogClose as-child>
+              <Button
+                type="button"
+                variant="secondary"
+              >
+                Close Dialog
+              </Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+      <Tooltip>
+        <TooltipTrigger as-child>
+          <Button
+            @click="appStore.resetFilterValues"
+            variant="default"
+            size="icon"
+          >
+            <RiResetLeftLine />
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent> Reset All Filters </TooltipContent>
+      </Tooltip>
     </div>
   </div>
 </template>

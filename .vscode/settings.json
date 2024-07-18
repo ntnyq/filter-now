@@ -13,6 +13,7 @@
     "nuxt",
     "pinia",
     "shadcn",
+    "shiki",
     "sonner",
     "unplugin",
     "unref",
