@@ -23,6 +23,9 @@ export default defineConfig({
       'tabs',
     ],
     homepage_url: 'https://github.com/ntnyq/filter-now',
+    content_security_policy: {
+      extension_pages: `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`,
+    },
     commands: {
       openOptionsPage: {
         suggested_key: {

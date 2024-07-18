@@ -16,9 +16,13 @@
 
 ## Screenshots
 
-![Light](./res/light.png)
+![](./res/01.png)
 
-![Dark](./res/dark.png)
+![](./res/02.png)
+
+![](./res/03.png)
+
+![](./res/04.png)
 
 ## Credits
 
