@@ -1,7 +1,7 @@
 {
   "name": "filter-now",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "packageManager": "pnpm@9.5.0",
   "description": "An offline tool help user to add CSS based filter to image and save it.",
