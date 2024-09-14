@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { ResizablePanel } from '@/components/ui/resizable'
 import { useAppStore } from '@/stores/app'
-import Main from './components/Main.vue'
 import Aside from './components/Aside.vue'
+import Main from './components/Main.vue'
 
 const appStore = useAppStore()
 </script>

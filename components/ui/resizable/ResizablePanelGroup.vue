@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
 import {
   SplitterGroup,
+  useForwardPropsEmits,
   type SplitterGroupEmits,
   type SplitterGroupProps,
-  useForwardPropsEmits,
 } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/utils/shadcn'
 
 const props = defineProps<SplitterGroupProps & { class?: HTMLAttributes['class'] }>()

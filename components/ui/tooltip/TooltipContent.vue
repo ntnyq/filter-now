@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
 import {
   TooltipContent,
-  type TooltipContentEmits,
-  type TooltipContentProps,
   TooltipPortal,
   useForwardPropsEmits,
+  type TooltipContentEmits,
+  type TooltipContentProps,
 } from 'radix-vue'
+import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/utils/shadcn'
 
 const props = withDefaults(

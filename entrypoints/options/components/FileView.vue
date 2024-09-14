@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { UploadCloud } from 'lucide-vue-next'
 import { useDropZone, useFileDialog } from '@vueuse/core'
+import { UploadCloud } from 'lucide-vue-next'
+import { ref } from 'vue'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()

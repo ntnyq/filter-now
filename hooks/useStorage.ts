@@ -3,8 +3,8 @@
  */
 
 import { storage } from 'wxt/storage'
-import type { JsonValue } from '@/types'
 import type { StorageItemKey } from 'wxt/storage'
+import type { JsonValue } from '@/types'
 
 export interface UseStorageOptions<T> {
   mode?: 'local' | 'session'

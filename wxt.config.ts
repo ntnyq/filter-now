@@ -3,14 +3,14 @@
  * @see {@link https://wxt.dev/api/config.html}
  */
 
-import { defineConfig } from 'wxt'
 import Vue from '@vitejs/plugin-vue'
-import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 import VueComponents from 'unplugin-vue-components/vite'
+import { defineConfig } from 'wxt'
 import { resolve } from './scripts/utils'
-import type { Command } from '@/constants/command'
 import type { Manifest } from 'wxt/browser'
+import type { Command } from '@/constants/command'
 
 const CSP = `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`
 

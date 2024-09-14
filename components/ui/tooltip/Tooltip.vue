@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {
   TooltipRoot,
+  useForwardPropsEmits,
   type TooltipRootEmits,
   type TooltipRootProps,
-  useForwardPropsEmits,
 } from 'radix-vue'
 
 const props = defineProps<TooltipRootProps>()

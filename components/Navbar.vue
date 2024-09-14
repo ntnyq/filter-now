@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { version } from '@/package.json'
-import { META } from '@/constants/meta'
-import { isDark, toggleDark } from '@/hooks/useDark'
 import RadixIconsGithubLogo from '~icons/radix-icons/github-logo'
 import RadixIconsMoon from '~icons/radix-icons/moon'
 import RadixIconsSun from '~icons/radix-icons/sun'
+import { META } from '@/constants/meta'
+import { isDark, toggleDark } from '@/hooks/useDark'
+import { version } from '@/package.json'
 </script>
 
 <template>
