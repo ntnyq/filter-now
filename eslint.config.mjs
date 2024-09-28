@@ -1,15 +1,10 @@
-import { ntnyq } from '@ntnyq/eslint-config'
+import { defineESLintConfig } from '@ntnyq/eslint-config'
 
-export default ntnyq(
-  {
-    ignores: ['**/.wxt'],
+const config = defineESLintConfig().append({
+  files: ['**/components/ui/**/*.ts', '**/components/ui/**/*.vue'],
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'off',
   },
-  [
-    {
-      files: ['**/components/ui/**/*.ts', '**/components/ui/**/*.vue'],
-      rules: {
-        '@typescript-eslint/no-unused-vars': 'off',
-      },
-    },
-  ],
-)
+})
+
+export default config

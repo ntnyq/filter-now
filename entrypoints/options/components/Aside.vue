@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { pascalCase } from '@ntnyq/utils'
 import { useClipboard } from '@vueuse/core'
 import RiCss3Fill from '~icons/ri/css3-fill'
 import RiResetLeftLine from '~icons/ri/reset-left-line'
@@ -8,7 +9,6 @@ import { filterList } from '@/constants/filter'
 import { ACTION } from '@/constants/meta'
 import { actionBus } from '@/hooks/useEventBus'
 import { useAppStore } from '@/stores/app'
-import { pascalCase } from '@/utils'
 
 const appStore = useAppStore()
 const { toast } = useToast()
