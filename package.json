@@ -21,15 +21,15 @@
     "zip:firefox": "wxt zip -b firefox"
   },
   "dependencies": {
-    "@iconify/json": "^2.2.267",
+    "@iconify/json": "^2.2.270",
     "@ntnyq/utils": "^0.2.0",
     "@vueuse/core": "^11.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "html2canvas": "^1.4.1",
-    "lucide-vue-next": "^0.454.0",
+    "lucide-vue-next": "^0.456.0",
     "pinia": "^2.2.6",
-    "radix-vue": "^1.9.8",
+    "radix-vue": "^1.9.9",
     "shiki": "^1.22.2",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@ntnyq/eslint-config": "^3.2.0",
     "@ntnyq/prettier-config": "^1.21.3",
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue": "^5.1.5",
     "autoprefixer": "^10.4.20",
     "bumpp": "^9.8.1",
     "eslint": "^9.14.0",
@@ -50,7 +50,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
-    "unplugin-icons": "^0.20.0",
+    "unplugin-icons": "^0.20.1",
     "unplugin-vue-components": "^0.27.4",
     "vue-tsc": "^2.1.10",
     "wxt": "^0.19.13"
