@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useDropZone, useFileDialog } from '@vueuse/core'
 import { UploadCloud } from 'lucide-vue-next'
-import { ref } from 'vue'
+import { useTemplateRef } from 'vue'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
@@ -14,7 +14,7 @@ const {
   accept: '.png,.jpg,.jpeg',
 })
 
-const dropZoneRef = ref<HTMLDivElement>()
+const dropZoneRef = useTemplateRef('dropZoneRef')
 const { isOverDropZone } = useDropZone(dropZoneRef, {
   onDrop(files, event) {
     event.preventDefault()

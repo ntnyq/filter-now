@@ -17,6 +17,9 @@ const { copy } = useClipboard()
 function onUserAction(key: string) {
   actionBus.emit(key)
 }
+function onResetFilter(filter: (typeof filterList)[number]) {
+  appStore.filterValues[filter.name] = [filter.defaultValue]
+}
 async function onCopyCode() {
   await copy(appStore.rawCSSCode)
   toast({
@@ -48,7 +51,7 @@ async function onCopyCode() {
                 {{ `${appStore.filterValues[filter.name]?.[0]}${filter.unit}` }}
               </span>
               <Button
-                @click="appStore.filterValues[filter.name] = [filter.defaultValue]"
+                @click="onResetFilter(filter)"
                 variant="ghost"
                 size="xs"
               >

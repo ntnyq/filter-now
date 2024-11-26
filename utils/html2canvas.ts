@@ -15,13 +15,14 @@ export async function downloadImageFromDom(element: HTMLElement, options: Partia
 
   // Workaround for https://github.com/niklasvh/html2canvas/issues/493
   const context = newCanvas.getContext('2d')
+
   context!.filter = getComputedStyle(element).filter
   context?.drawImage(oldCanavs, 0, 0, oldCanavs.width, oldCanavs.height)
 
   const url = newCanvas.toDataURL('image/png', 0.97)
+  const link = document.createElement('a')
 
-  const a = document.createElement('a')
-  a.href = url
-  a.download = 'image.png'
-  a.click()
+  link.href = url
+  link.download = 'image.png'
+  link.click()
 }

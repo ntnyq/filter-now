@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { computed, useTemplateRef } from 'vue'
 import RadixIconsDelete from '~icons/ri/delete-bin-5-line'
-import { computed, ref } from 'vue'
 import { filterList } from '@/constants/filter'
 import { ACTION } from '@/constants/meta'
 import { actionBus } from '@/hooks/useEventBus'
@@ -9,7 +9,7 @@ import { downloadImageFromDom } from '@/utils/html2canvas'
 
 const appStore = useAppStore()
 
-const imageWrapperRef = ref<HTMLElement>()
+const imageWrapperRef = useTemplateRef('imageWrapperRef')
 
 const imageWrapperStyle = computed(() => {
   if (!appStore.filterValues) return ''
