@@ -26,7 +26,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "html2canvas": "^1.4.1",
-    "lucide-vue-next": "^0.463.0",
+    "lucide-vue-next": "^0.464.0",
     "pinia": "^2.2.8",
     "radix-vue": "^1.9.10",
     "shiki": "^1.24.0",
