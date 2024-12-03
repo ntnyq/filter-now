@@ -15,9 +15,9 @@ export type FilterType =
 /**
  * @file Copied from `type-fest`
  */
-export type JsonPrimitive = string | number | boolean | null
+export type JsonArray = JsonValue[] | readonly JsonValue[]
 export type JsonObject = { [Key in string]: JsonValue } & {
   [Key in string]?: JsonValue | undefined
 }
-export type JsonArray = JsonValue[] | readonly JsonValue[]
-export type JsonValue = JsonPrimitive | JsonObject | JsonArray
+export type JsonPrimitive = boolean | null | number | string
+export type JsonValue = JsonArray | JsonObject | JsonPrimitive

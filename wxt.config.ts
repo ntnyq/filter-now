@@ -12,50 +12,16 @@ import { resolve } from './scripts/utils'
 import type { Manifest } from 'wxt/browser'
 import type { Command } from '@/constants/command'
 
-const CSP = `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`
-
 export default defineConfig({
-  outDir: 'dist',
-
-  manifest: ({ browser }) => ({
-    name: 'Filter Now',
-    permissions: [
-      'storage',
-      // Open tabs in background
-      'tabs',
-    ],
-    homepage_url: 'https://github.com/ntnyq/filter-now',
-    ...(browser === 'chrome'
-      ? {
-          content_security_policy: {
-            extension_pages: CSP,
-          },
-        }
-      : {
-          content_security_policy: CSP,
-        }),
-    commands: {
-      openOptionsPage: {
-        suggested_key: {
-          default: 'Alt+O',
-        },
-        description: 'Open the Options page',
-      },
-    } satisfies Record<Command, Manifest.WebExtensionManifestCommandsType>,
-  }),
-
-  runner: {
-    chromiumArgs: ['--auto-open-devtools-for-tabs'],
-    startUrls: ['https://ntnyq.com'],
-  },
-
   imports: {
+    addons: {
+      vueTemplate: true,
+    },
     presets: [
       'vue',
       'pinia',
       'vue-router',
       {
-        package: '@vueuse/core',
         ignore: [
           // exported from `vue`
           'toRef',
@@ -64,11 +30,37 @@ export default defineConfig({
           // exported from `wxt/storage`
           'useStorage',
         ],
+        package: '@vueuse/core',
       },
     ],
-    addons: {
-      vueTemplate: true,
+  },
+
+  manifest: () => ({
+    commands: {
+      openOptionsPage: {
+        description: 'Open the Options page',
+        suggested_key: {
+          default: 'Alt+O',
+        },
+      },
+    } satisfies Record<Command, Manifest.WebExtensionManifestCommandsType>,
+    content_security_policy: {
+      extension_pages: `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`,
     },
+    homepage_url: 'https://github.com/ntnyq/filter-now',
+    name: 'Filter Now',
+    permissions: [
+      'storage',
+      // Open tabs in background
+      'tabs',
+    ],
+  }),
+
+  outDir: 'dist',
+
+  runner: {
+    chromiumArgs: ['--auto-open-devtools-for-tabs'],
+    startUrls: ['https://ntnyq.com'],
   },
 
   vite: () => ({
@@ -80,12 +72,13 @@ export default defineConfig({
       Vue(),
 
       Icons({
+        autoInstall: true,
         scale: 1.2,
       }),
 
       VueComponents({
-        dts: 'types/components.d.ts',
         dirs: [resolve('components')],
+        dts: 'types/components.d.ts',
         resolvers: [IconsResolver()],
       }),
     ],
