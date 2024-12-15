@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.4",
   "private": true,
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.0",
   "description": "An offline tool help user to add CSS based filter to image and save it.",
   "repository": "ntnyq/filter-now",
   "scripts": {
@@ -21,15 +21,15 @@
     "zip:firefox": "wxt zip -b firefox"
   },
   "dependencies": {
-    "@ntnyq/utils": "^0.3.1",
+    "@ntnyq/utils": "^0.4.1",
     "@vueuse/core": "^12.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "html2canvas": "^1.4.1",
-    "lucide-vue-next": "^0.464.0",
-    "pinia": "^2.2.8",
-    "radix-vue": "^1.9.10",
-    "shiki": "^1.24.0",
+    "lucide-vue-next": "^0.468.0",
+    "pinia": "^2.3.0",
+    "radix-vue": "^1.9.11",
+    "shiki": "^1.24.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-sonner": "^1.3.0"
@@ -37,31 +37,30 @@
   "devDependencies": {
     "@iconify-json/radix-icons": "^1.2.1",
     "@iconify-json/ri": "^1.2.3",
-    "@ntnyq/eslint-config": "^3.7.2",
+    "@ntnyq/eslint-config": "^3.9.2",
     "@ntnyq/prettier-config": "^1.22.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
-    "bumpp": "^9.8.1",
-    "eslint": "^9.16.0",
+    "bumpp": "^9.9.1",
+    "eslint": "^9.17.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.1",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss": "^3.4.15",
+    "tailwindcss": "^3.4.16",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "unplugin-icons": "^0.21.0",
     "unplugin-vue-components": "^0.27.5",
     "vue-tsc": "^2.1.10",
-    "wxt": "^0.19.17"
+    "wxt": "^0.19.22"
   },
   "pnpm": {
     "patchedDependencies": {
       "vue-tsc@2.1.10": "patches/vue-tsc@2.1.10.patch"
     }
   },
-  "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
     "*.{js,ts,cjs,mjs,vue,md,json,yml,yaml}": "eslint --fix"
   }
