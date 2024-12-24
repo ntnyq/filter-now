@@ -13,29 +13,11 @@ import type { Manifest } from 'wxt/browser'
 import type { Command } from '@/constants/command'
 
 export default defineConfig({
-  imports: {
-    addons: {
-      vueTemplate: true,
-    },
-    presets: [
-      'vue',
-      'pinia',
-      'vue-router',
-      {
-        ignore: [
-          // exported from `vue`
-          'toRef',
-          'toRefs',
-          'toValue',
-          // exported from `wxt/storage`
-          'useStorage',
-        ],
-        package: '@vueuse/core',
-      },
-    ],
-  },
+  outDir: 'dist',
 
   manifest: () => ({
+    homepage_url: 'https://github.com/ntnyq/filter-now',
+    name: 'Filter Now',
     commands: {
       openOptionsPage: {
         description: 'Open the Options page',
@@ -47,21 +29,12 @@ export default defineConfig({
     content_security_policy: {
       extension_pages: `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`,
     },
-    homepage_url: 'https://github.com/ntnyq/filter-now',
-    name: 'Filter Now',
     permissions: [
       'storage',
       // Open tabs in background
       'tabs',
     ],
   }),
-
-  outDir: 'dist',
-
-  runner: {
-    chromiumArgs: ['--auto-open-devtools-for-tabs'],
-    startUrls: ['https://ntnyq.com'],
-  },
 
   vite: () => ({
     css: {
@@ -83,4 +56,31 @@ export default defineConfig({
       }),
     ],
   }),
+
+  imports: {
+    addons: {
+      vueTemplate: true,
+    },
+    presets: [
+      'vue',
+      'pinia',
+      'vue-router',
+      {
+        package: '@vueuse/core',
+        ignore: [
+          // exported from `vue`
+          'toRef',
+          'toRefs',
+          'toValue',
+          // exported from `wxt/storage`
+          'useStorage',
+        ],
+      },
+    ],
+  },
+
+  runner: {
+    chromiumArgs: ['--auto-open-devtools-for-tabs'],
+    startUrls: ['https://ntnyq.com'],
+  },
 })

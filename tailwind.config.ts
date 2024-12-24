@@ -2,6 +2,10 @@ import animate from 'tailwindcss-animate'
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ['class'],
+  plugins: [animate],
+  prefix: '',
+  safelist: ['dark'],
   content: [
     './pages/**/*.{ts,tsx,vue}',
     './entrypoints/**/*.{ts,tsx,vue}',
@@ -9,10 +13,6 @@ export default {
     './app/**/*.{ts,tsx,vue}',
     './src/**/*.{ts,tsx,vue}',
   ],
-  darkMode: ['class'],
-  plugins: [animate],
-  prefix: '',
-  safelist: ['dark'],
   theme: {
     container: {
       center: true,
@@ -35,12 +35,15 @@ export default {
         xl: 'calc(var(--radius) + 4px)',
       },
       colors: {
+        background: 'hsl(var(--background))',
+        border: 'hsl(var(--border))',
+        foreground: 'hsl(var(--foreground))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
-        background: 'hsl(var(--background))',
-        border: 'hsl(var(--border))',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -49,8 +52,6 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        foreground: 'hsl(var(--foreground))',
-        input: 'hsl(var(--input))',
         muted: {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
@@ -63,7 +64,6 @@ export default {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
-        ring: 'hsl(var(--ring))',
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
