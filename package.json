@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.4",
   "private": true,
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "description": "An offline tool help user to add CSS based filter to image and save it.",
   "repository": "ntnyq/filter-now",
   "scripts": {
@@ -21,7 +21,7 @@
     "zip:firefox": "wxt zip -b firefox"
   },
   "dependencies": {
-    "@ntnyq/utils": "^0.4.1",
+    "@ntnyq/utils": "^0.4.2",
     "@vueuse/core": "^12.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/ri": "^1.2.5",
-    "@ntnyq/eslint-config": "^3.10.2",
+    "@ntnyq/eslint-config": "^3.10.4",
     "@ntnyq/prettier-config": "^1.22.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
@@ -54,7 +54,7 @@
     "unplugin-icons": "^0.22.0",
     "unplugin-vue-components": "^0.28.0",
     "vue-tsc": "^2.2.0",
-    "wxt": "^0.19.22"
+    "wxt": "^0.19.23"
   },
   "nano-staged": {
     "*.{js,ts,cjs,mjs,vue,md,json,yml,yaml}": "eslint --fix"
