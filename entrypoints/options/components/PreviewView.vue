@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { computed, useTemplateRef } from 'vue'
 import RadixIconsDelete from '~icons/ri/delete-bin-5-line'
+import { actionBus } from '@/composables/useEventBus'
 import { filterList } from '@/constants/filter'
 import { ACTION } from '@/constants/meta'
-import { actionBus } from '@/hooks/useEventBus'
 import { useAppStore } from '@/stores/app'
 import { downloadImageFromDom } from '@/utils/html2canvas'
 

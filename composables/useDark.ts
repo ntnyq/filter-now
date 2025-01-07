@@ -1,5 +1,5 @@
 /**
- * @file ColorModeToggle
+ * @file dark
  */
 
 export const isDark = useDark()

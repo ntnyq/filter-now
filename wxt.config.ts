@@ -3,7 +3,6 @@
  * @see {@link https://wxt.dev/api/config.html}
  */
 
-import Vue from '@vitejs/plugin-vue'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import VueComponents from 'unplugin-vue-components/vite'
@@ -13,6 +12,10 @@ import type { Manifest } from 'wxt/browser'
 import type { Command } from '@/constants/command'
 
 export default defineConfig({
+  extensionApi: 'chrome',
+
+  modules: ['@wxt-dev/module-vue', '@wxt-dev/auto-icons'],
+
   outDir: 'dist',
 
   manifest: () => ({
@@ -37,13 +40,21 @@ export default defineConfig({
   }),
 
   vite: () => ({
+    build: {
+      // Max per file size for Firefox is 4MB.
+      chunkSizeWarningLimit: 4 * 1024,
+    },
+
     css: {
       devSourcemap: true,
     },
 
-    plugins: [
-      Vue(),
+    optimizeDeps: {
+      // https://github.com/vitejs/vite/discussions/13306
+      entries: ['**/entrypoints/**/*.html'],
+    },
 
+    plugins: [
       Icons({
         autoInstall: true,
         scale: 1.2,
@@ -51,11 +62,15 @@ export default defineConfig({
 
       VueComponents({
         dirs: [resolve('components')],
-        dts: 'types/components.d.ts',
+        dts: resolve('types/components.d.ts'),
         resolvers: [IconsResolver()],
       }),
     ],
   }),
+
+  autoIcons: {
+    baseIconPath: './assets/images/icon.png',
+  },
 
   imports: {
     addons: {
@@ -77,10 +92,5 @@ export default defineConfig({
         ],
       },
     ],
-  },
-
-  runner: {
-    chromiumArgs: ['--auto-open-devtools-for-tabs'],
-    startUrls: ['https://ntnyq.com'],
   },
 })

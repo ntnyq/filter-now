@@ -1,10 +1,13 @@
 <script lang="ts" setup>
+import { browser } from 'wxt/browser'
 import RadixIconsGithubLogo from '~icons/radix-icons/github-logo'
 import RadixIconsMoon from '~icons/radix-icons/moon'
 import RadixIconsSun from '~icons/radix-icons/sun'
+import { isDark, toggleDark } from '@/composables/useDark'
 import { META } from '@/constants/meta'
-import { isDark, toggleDark } from '@/hooks/useDark'
 import { version } from '@/package.json'
+
+const iconUrl = browser.runtime.getURL('/icons/48.png')
 </script>
 
 <template>
@@ -13,8 +16,8 @@ import { version } from '@/package.json'
       <div class="mr-4 md:mr-1 hidden md:flex gap-1">
         <img
           :alt="META.appTitle"
+          :src="iconUrl"
           class="w-6 h-6 block"
-          src="/icon/48.png"
         />
         <h1 class="text-lg font-bold">{{ META.appTitle }}</h1>
         <small>v{{ version }}</small>
