@@ -54,7 +54,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
-    "unplugin-icons": "^0.22.0",
+    "unplugin-icons": "^22.0.0",
     "unplugin-vue-components": "^0.28.0",
     "vue-tsc": "^2.2.0",
     "wxt": "^0.19.24"
