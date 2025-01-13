@@ -22,11 +22,11 @@
   },
   "dependencies": {
     "@ntnyq/utils": "^0.4.5",
-    "@vueuse/core": "^12.3.0",
+    "@vueuse/core": "^12.4.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "html2canvas": "^1.4.1",
-    "lucide-vue-next": "^0.469.0",
+    "lucide-vue-next": "^0.471.0",
     "pinia": "^2.3.0",
     "radix-vue": "^1.9.12",
     "shiki": "^1.26.1",
@@ -37,15 +37,15 @@
   "devDependencies": {
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/ri": "^1.2.5",
-    "@ntnyq/eslint-config": "^3.11.0",
+    "@ntnyq/eslint-config": "^3.12.1",
     "@ntnyq/prettier-config": "^1.22.1",
-    "@types/chrome": "^0.0.290",
+    "@types/chrome": "^0.0.293",
     "@vitejs/plugin-vue": "^5.2.1",
     "@wxt-dev/auto-icons": "^1.0.2",
     "@wxt-dev/module-vue": "^1.0.2",
     "autoprefixer": "^10.4.20",
-    "bumpp": "^9.9.2",
-    "eslint": "^9.17.0",
+    "bumpp": "^9.10.0",
+    "eslint": "^9.18.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.2",
@@ -53,11 +53,11 @@
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.3",
     "unplugin-icons": "^0.22.0",
     "unplugin-vue-components": "^0.28.0",
     "vue-tsc": "^2.2.0",
-    "wxt": "^0.19.23"
+    "wxt": "^0.19.24"
   },
   "nano-staged": {
     "*.{js,ts,cjs,mjs,vue,md,json,yml,yaml}": "eslint --fix"
