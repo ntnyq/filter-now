@@ -2,8 +2,6 @@
 
 import { defineESLintConfig } from '@ntnyq/eslint-config'
 
-const config = await defineESLintConfig({
+export default defineESLintConfig({
   svgo: true,
 })
-
-export default config
