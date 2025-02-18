@@ -9,10 +9,14 @@ const appStore = useAppStore()
 
 <template>
   <TooltipProvider>
-    <main class="relative overflow-hidden flex flex-col h-screen min-w-[1200px]">
+    <main
+      class="relative h-screen min-w-[1200px] flex flex-col overflow-hidden"
+    >
       <Navbar />
       <div class="relative h-[calc(100vh-var(--h-navbar))]">
-        <div class="container h-full max-w-screen-2xl p-0 border border-border">
+        <div
+          class="mx-auto h-full max-w-screen-2xl border border p-0 container"
+        >
           <ResizablePanelGroup direction="horizontal">
             <ResizablePanel :min-size="30">
               <Main />

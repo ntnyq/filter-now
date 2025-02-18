@@ -10,7 +10,10 @@ import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/utils/shadcn'
 
 const props = defineProps<
-  SplitterResizeHandleProps & { class?: HTMLAttributes['class']; withHandle?: boolean }
+  SplitterResizeHandleProps & {
+    class?: HTMLAttributes['class']
+    withHandle?: boolean
+  }
 >()
 const emits = defineEmits<SplitterResizeHandleEmits>()
 
@@ -33,7 +36,9 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
     "
   >
     <template v-if="props.withHandle">
-      <div class="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
+      <div
+        class="z-10 h-4 w-3 flex items-center justify-center border rounded-sm bg-border"
+      >
         <GripVertical class="h-2.5 w-2.5" />
       </div>
     </template>

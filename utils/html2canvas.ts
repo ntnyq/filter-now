@@ -4,7 +4,10 @@
 
 import type { Options } from 'html2canvas'
 
-export async function downloadImageFromDom(element: HTMLElement, options: Partial<Options> = {}) {
+export async function downloadImageFromDom(
+  element: HTMLElement,
+  options: Partial<Options> = {},
+) {
   const { default: html2canvas } = await import('html2canvas')
   const oldCanavs = await html2canvas(element, options)
 

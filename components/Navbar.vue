@@ -1,9 +1,6 @@
 <script lang="ts" setup>
 import { browser } from 'wxt/browser'
-import RadixIconsGithubLogo from '~icons/radix-icons/github-logo'
-import RadixIconsMoon from '~icons/radix-icons/moon'
-import RadixIconsSun from '~icons/radix-icons/sun'
-import { isDark, toggleDark } from '@/composables/useDark'
+import { isDark, toggleDark } from '@/composables/dark'
 import { META } from '@/constants/meta'
 import { version } from '@/package.json'
 
@@ -11,13 +8,15 @@ const iconUrl = browser.runtime.getURL('/icons/48.png')
 </script>
 
 <template>
-  <div class="relative z-40 bg-background/80 backdrop-blur-lg border-b border-border">
-    <div class="container flex items-center justify-between h-[var(--h-navbar)] max-w-screen-2xl">
-      <div class="mr-4 md:mr-1 hidden md:flex gap-1">
+  <div class="relative z-40 border border-b bg-background/80 backdrop-blur-lg">
+    <div
+      class="mx-auto h-[var(--h-navbar)] max-w-screen-2xl flex items-center justify-between container"
+    >
+      <div class="mr-4 hidden gap-1 md:mr-1 md:flex">
         <img
           :alt="META.appTitle"
           :src="iconUrl"
-          class="w-6 h-6 block"
+          class="block h-6 w-6"
         />
         <h1 class="text-lg font-bold">{{ META.appTitle }}</h1>
         <small>v{{ version }}</small>
@@ -30,8 +29,9 @@ const iconUrl = browser.runtime.getURL('/icons/48.png')
               variant="ghost"
               size="icon"
             >
-              <RadixIconsMoon v-if="isDark" />
-              <RadixIconsSun v-else />
+              <div
+                :class="isDark ? 'i-radix-icons:moon' : 'i-radix-icons:sun'"
+              />
             </Button>
           </TooltipTrigger>
           <TooltipContent>Toggle Color Mode</TooltipContent>
@@ -45,7 +45,7 @@ const iconUrl = browser.runtime.getURL('/icons/48.png')
               variant="ghost"
               size="icon"
             >
-              <RadixIconsGithubLogo />
+              <div class="i-radix-icons:github-logo" />
             </Button>
           </TooltipTrigger>
           <TooltipContent>GitHub Repository</TooltipContent>

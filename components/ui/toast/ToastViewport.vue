@@ -3,7 +3,9 @@ import { ToastViewport, type ToastViewportProps } from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/utils/shadcn'
 
-const props = defineProps<ToastViewportProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<
+  ToastViewportProps & { class?: HTMLAttributes['class'] }
+>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

@@ -9,7 +9,7 @@
     "baseColor": "zinc",
     "cssVariables": true
   },
-  "framework": "nuxt",
+  "framework": "vite",
   "aliases": {
     "components": "@/components",
     "utils": "@/utils/shadcn"

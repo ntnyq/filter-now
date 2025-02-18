@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import { pascalCase } from '@ntnyq/utils'
 import { useClipboard } from '@vueuse/core'
-import RiCss3Fill from '~icons/ri/css3-fill'
-import RiResetLeftLine from '~icons/ri/reset-left-line'
-import RiSave3Fill from '~icons/ri/save-3-fill'
+import { pascalCase } from 'uncase'
 import { useToast } from '@/components/ui/toast'
-import { actionBus } from '@/composables/useEventBus'
+import { actionBus } from '@/composables/eventBus'
 import { filterList } from '@/constants/filter'
 import { ACTION } from '@/constants/meta'
 import { useAppStore } from '@/stores/app'
@@ -29,7 +26,7 @@ async function onCopyCode() {
 </script>
 
 <template>
-  <div class="flex-1 flex flex-col">
+  <div class="flex flex-1 flex-col">
     <div class="h-[calc(100%-80px)]">
       <ScrollArea class="h-full">
         <div
@@ -46,7 +43,7 @@ async function onCopyCode() {
             </Label>
             <div class="flex items-center gap-2">
               <span
-                class="min-w-12 rounded-md border border-transparent px-2 py-0.5 text-right text-sm text-muted-foreground hover:border-border"
+                class="min-w-12 border border-transparent rounded-md px-2 py-0.5 text-right text-sm text-muted-foreground hover:border"
               >
                 {{ `${appStore.filterValues[filter.name]?.[0]}${filter.unit}` }}
               </span>
@@ -72,7 +69,7 @@ async function onCopyCode() {
       </ScrollArea>
     </div>
     <Separator />
-    <div class="h-[80px] flex gap-4 px-4 justify-center items-center flex-wrap">
+    <div class="h-[80px] flex flex-wrap items-center justify-center gap-4 px-4">
       <Tooltip>
         <TooltipTrigger as-child>
           <Button
@@ -80,7 +77,7 @@ async function onCopyCode() {
             variant="default"
             size="icon"
           >
-            <RiSave3Fill />
+            <div class="i-ri:save-3-fill" />
           </Button>
         </TooltipTrigger>
         <TooltipContent> Save Image </TooltipContent>
@@ -93,7 +90,7 @@ async function onCopyCode() {
                 variant="default"
                 size="icon"
               >
-                <RiCss3Fill />
+                <div class="i-ri:css3-fill" />
               </Button>
             </DialogTrigger>
           </TooltipTrigger>
@@ -104,15 +101,15 @@ async function onCopyCode() {
             <DialogTitle>CSS Code</DialogTitle>
             <DialogDescription>This is generated CSS code.</DialogDescription>
           </DialogHeader>
-          <div class="relative py-4 w-full overflow-x-auto">
+          <div class="relative w-full overflow-x-auto py-4">
             <div
               v-if="appStore.rawCSSCode"
               v-html="appStore.highlightedCode"
-              class="font-mono text-lg py-4 w-full overflow-x-auto"
+              class="w-full overflow-x-auto py-4 text-lg font-mono"
             />
             <div
               v-else
-              class="p-10 justify-center text-lg text-zinc-500 bg-zinc-100 flex items-center dark:bg-zinc-800 dark:text-zinc-500"
+              class="flex items-center justify-center bg-zinc-100 p-10 text-lg text-zinc-500 dark:bg-zinc-800 dark:text-zinc-500"
             >
               No CSS code generated.
             </div>
@@ -144,7 +141,7 @@ async function onCopyCode() {
             variant="default"
             size="icon"
           >
-            <RiResetLeftLine />
+            <div class="i-ri:reset-left-line" />
           </Button>
         </TooltipTrigger>
         <TooltipContent> Reset All Filters </TooltipContent>

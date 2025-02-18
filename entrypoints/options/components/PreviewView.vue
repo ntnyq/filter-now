@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { computed, useTemplateRef } from 'vue'
-import RadixIconsDelete from '~icons/ri/delete-bin-5-line'
-import { actionBus } from '@/composables/useEventBus'
+import { actionBus } from '@/composables/eventBus'
 import { filterList } from '@/constants/filter'
 import { ACTION } from '@/constants/meta'
 import { useAppStore } from '@/stores/app'
@@ -36,16 +35,16 @@ function onClearImage() {
 </script>
 
 <template>
-  <div class="relative h-[calc(100vh-var(--h-navbar))] p-4 flex">
-    <div class="relative bg-grid flex-1 flex justify-center items-center">
+  <div class="relative h-[calc(100vh-var(--h-navbar))] flex p-4">
+    <div class="bg-grid relative flex flex-1 items-center justify-center">
       <div
         ref="imageWrapperRef"
         :style="imageWrapperStyle"
-        class="w-5/6 h-5/6 p-4 flex justify-center items-center bg-white"
+        class="h-5/6 w-5/6 flex items-center justify-center bg-white p-4"
       >
         <img
           :src="appStore.imageDataUrl"
-          class="object-contain block max-w-full max-h-full"
+          class="block max-h-full max-w-full object-contain"
         />
       </div>
 
@@ -53,11 +52,11 @@ function onClearImage() {
         <TooltipTrigger as-child>
           <Button
             @click="onClearImage"
-            class="absolute top-0 right-0"
+            class="absolute right-0 top-0"
             size="icon"
             variant="destructive"
           >
-            <RadixIconsDelete />
+            <div class="i-radix-icons:delete" />
           </Button>
         </TooltipTrigger>
         <TooltipContent>Clear Current Image</TooltipContent>

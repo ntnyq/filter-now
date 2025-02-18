@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { ScrollAreaScrollbar, ScrollAreaThumb, type ScrollAreaScrollbarProps } from 'radix-vue'
+import {
+  ScrollAreaScrollbar,
+  ScrollAreaThumb,
+  type ScrollAreaScrollbarProps,
+} from 'radix-vue'
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/utils/shadcn'
 
@@ -23,8 +27,10 @@ const delegatedProps = computed(() => {
     :class="
       cn(
         'flex touch-none select-none transition-colors',
-        orientation === 'vertical' && 'h-full w-2.5 border-l border-l-transparent p-px',
-        orientation === 'horizontal' && 'h-2.5 flex-col border-t border-t-transparent p-px',
+        orientation === 'vertical' &&
+          'h-full w-2.5 border-l border-l-transparent p-px',
+        orientation === 'horizontal' &&
+          'h-2.5 flex-col border-t border-t-transparent p-px',
         props.class,
       )
     "

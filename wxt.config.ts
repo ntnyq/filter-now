@@ -3,8 +3,6 @@
  * @see {@link https://wxt.dev/api/config.html}
  */
 
-import IconsResolver from 'unplugin-icons/resolver'
-import Icons from 'unplugin-icons/vite'
 import VueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'wxt'
 import { resolve } from './scripts/utils'
@@ -14,7 +12,7 @@ import type { Command } from '@/constants/command'
 export default defineConfig({
   extensionApi: 'chrome',
 
-  modules: ['@wxt-dev/module-vue', '@wxt-dev/auto-icons'],
+  modules: ['@wxt-dev/module-vue', '@wxt-dev/unocss', '@wxt-dev/auto-icons'],
 
   outDir: 'dist',
 
@@ -55,15 +53,10 @@ export default defineConfig({
     },
 
     plugins: [
-      Icons({
-        autoInstall: true,
-        scale: 1.2,
-      }),
-
       VueComponents({
         dirs: [resolve('components')],
         dts: resolve('types/components.d.ts'),
-        resolvers: [IconsResolver()],
+        resolvers: [],
       }),
     ],
   }),
