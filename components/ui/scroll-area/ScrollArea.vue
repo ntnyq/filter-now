@@ -4,9 +4,9 @@ import {
   ScrollAreaRoot,
   ScrollAreaViewport,
   type ScrollAreaRootProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 import ScrollBar from './ScrollBar.vue'
 
 const props = defineProps<

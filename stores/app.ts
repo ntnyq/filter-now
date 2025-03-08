@@ -18,8 +18,8 @@ export const useAppStore = defineStore('app', () => {
     const filters = Object.entries(filterValues.value)
       .filter(([key, value]) => {
         return (
-          value[0] !==
-          filterList.find(filter => filter.name === key)?.defaultValue
+          value[0]
+          !== filterList.find(filter => filter.name === key)?.defaultValue
         )
       })
       .map(([key, value]) => {

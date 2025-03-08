@@ -1,0 +1,10 @@
+packages:
+  - .
+overrides:
+  esbuild: ^0.25.0
+onlyBuiltDependencies:
+  - dtrace-provider
+  - esbuild
+  - sharp
+  - spawn-sync
+  - vue-demi

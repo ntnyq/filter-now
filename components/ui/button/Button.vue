@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Primitive, type PrimitiveProps } from 'radix-vue'
-import { cn } from '@/utils/shadcn'
+import { Primitive, type PrimitiveProps } from 'reka-ui'
+import { cn } from '@/utils/libs/shadcn'
 import { buttonVariants, type ButtonVariants } from '.'
 import type { HTMLAttributes } from 'vue'
 

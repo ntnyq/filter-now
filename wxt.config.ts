@@ -16,6 +16,32 @@ export default defineConfig({
 
   outDir: 'dist',
 
+  autoIcons: {
+    baseIconPath: './assets/images/icon.png',
+  },
+
+  imports: {
+    addons: {
+      vueTemplate: true,
+    },
+    presets: [
+      'vue',
+      'pinia',
+      'vue-router',
+      {
+        package: '@vueuse/core',
+        ignore: [
+          // exported from `vue`
+          'toRef',
+          'toRefs',
+          'toValue',
+          // exported from `wxt/storage`
+          'useStorage',
+        ],
+      },
+    ],
+  },
+
   manifest: () => ({
     homepage_url: 'https://github.com/ntnyq/filter-now',
     name: 'Filter Now',
@@ -60,30 +86,4 @@ export default defineConfig({
       }),
     ],
   }),
-
-  autoIcons: {
-    baseIconPath: './assets/images/icon.png',
-  },
-
-  imports: {
-    addons: {
-      vueTemplate: true,
-    },
-    presets: [
-      'vue',
-      'pinia',
-      'vue-router',
-      {
-        package: '@vueuse/core',
-        ignore: [
-          // exported from `vue`
-          'toRef',
-          'toRefs',
-          'toValue',
-          // exported from `wxt/storage`
-          'useStorage',
-        ],
-      },
-    ],
-  },
 })

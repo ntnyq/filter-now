@@ -10,7 +10,7 @@ const iconUrl = browser.runtime.getURL('/icons/48.png')
 <template>
   <div class="relative z-40 border border-b bg-background/80 backdrop-blur-lg">
     <div
-      class="mx-auto h-[var(--h-navbar)] max-w-screen-2xl flex items-center justify-between container"
+      class="mx-auto h-$h-navbar max-w-screen-2xl flex items-center justify-between container"
     >
       <div class="mr-4 hidden gap-1 md:mr-1 md:flex">
         <img
@@ -19,7 +19,7 @@ const iconUrl = browser.runtime.getURL('/icons/48.png')
           class="block h-6 w-6"
         />
         <h1 class="text-lg font-bold">{{ META.appTitle }}</h1>
-        <small>v{{ version }}</small>
+        <small class="text-sm">v{{ version }}</small>
       </div>
       <div class="flex items-center gap-1">
         <Tooltip>

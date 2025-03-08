@@ -3,9 +3,9 @@ import {
   DialogDescription,
   useForwardProps,
   type DialogDescriptionProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 
 const props = defineProps<
   DialogDescriptionProps & { class?: HTMLAttributes['class'] }

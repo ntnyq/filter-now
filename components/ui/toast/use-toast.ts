@@ -55,7 +55,9 @@ interface State {
 const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
 
 function addToRemoveQueue(toastId: string) {
-  if (toastTimeouts.has(toastId)) return
+  if (toastTimeouts.has(toastId)) {
+    return
+  }
 
   const timeout = setTimeout(() => {
     toastTimeouts.delete(toastId)
@@ -110,8 +112,9 @@ function dispatch(action: Action) {
     }
 
     case actionTypes.REMOVE_TOAST:
-      if (action.toastId === undefined) state.value.toasts = []
-      else {
+      if (action.toastId === undefined) {
+        state.value.toasts = []
+      } else {
         state.value.toasts = state.value.toasts.filter(
           t => t.id !== action.toastId,
         )
@@ -151,7 +154,9 @@ function toast(props: Toast) {
       id,
       open: true,
       onOpenChange: (open: boolean) => {
-        if (!open) dismiss()
+        if (!open) {
+          dismiss()
+        }
       },
     },
   })

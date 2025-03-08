@@ -5,9 +5,9 @@
 export const isDark = useDark()
 
 const supportTransitionView =
-  typeof document !== 'undefined' &&
-  !!document.startViewTransition &&
-  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  typeof document !== 'undefined'
+  && !!document.startViewTransition
+  && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 /**
  * Credit to [@hooray](https://github.com/hooray)

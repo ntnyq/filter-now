@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { DialogTitle, useForwardProps, type DialogTitleProps } from 'radix-vue'
+import { DialogTitle, useForwardProps, type DialogTitleProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 
 const props = defineProps<
   DialogTitleProps & { class?: HTMLAttributes['class'] }

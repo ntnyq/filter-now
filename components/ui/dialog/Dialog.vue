@@ -4,7 +4,7 @@ import {
   useForwardPropsEmits,
   type DialogRootEmits,
   type DialogRootProps,
-} from 'radix-vue'
+} from 'reka-ui'
 
 const props = defineProps<DialogRootProps>()
 const emits = defineEmits<DialogRootEmits>()

@@ -8,9 +8,9 @@ import {
   useForwardPropsEmits,
   type DialogContentEmits,
   type DialogContentProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 
 const props = defineProps<
   DialogContentProps & { class?: HTMLAttributes['class'] }

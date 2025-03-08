@@ -27,10 +27,15 @@ export default defineConfig({
   presets: [
     presetWind3(),
     presetAnimations(),
-    presetShadcn({
-      color: 'orange',
-      darkSelector: '.dark',
-    }),
+    presetShadcn(
+      {
+        color: 'orange',
+        darkSelector: '.dark',
+      },
+      {
+        componentLibrary: 'reka',
+      },
+    ),
     presetIcons({
       autoInstall: true,
       scale: 1.2,

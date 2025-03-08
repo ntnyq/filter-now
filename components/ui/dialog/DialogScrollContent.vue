@@ -8,9 +8,9 @@ import {
   useForwardPropsEmits,
   type DialogContentEmits,
   type DialogContentProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 
 const props = defineProps<
   DialogContentProps & { class?: HTMLAttributes['class'] }
@@ -37,8 +37,8 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
             const originalEvent = event.detail.originalEvent
             const target = originalEvent.target as HTMLElement
             if (
-              originalEvent.offsetX > target.clientWidth ||
-              originalEvent.offsetY > target.clientHeight
+              originalEvent.offsetX > target.clientWidth
+              || originalEvent.offsetY > target.clientHeight
             ) {
               event.preventDefault()
             }
@@ -46,7 +46,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         "
         :class="
           cn(
-            'relative z-50 grid w-full max-w-lg my-8 gap-4 border border bg-background p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
+            'relative z-50 grid w-full max-w-lg my-8 gap-4 border border-border bg-background p-6 shadow-lg duration-200 sm:rounded-lg md:w-full',
             props.class,
           )
         "
@@ -55,7 +55,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         <slot />
 
         <DialogClose
-          class="absolute right-3 top-3 rounded-md p-0.5 transition-colors hover:bg-secondary"
+          class="absolute right-4 top-4 rounded-md p-0.5 transition-colors hover:bg-secondary"
         >
           <X class="h-4 w-4" />
           <span class="sr-only">Close</span>

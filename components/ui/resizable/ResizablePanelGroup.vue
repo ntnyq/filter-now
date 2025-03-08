@@ -4,9 +4,9 @@ import {
   useForwardPropsEmits,
   type SplitterGroupEmits,
   type SplitterGroupProps,
-} from 'radix-vue'
+} from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 
 const props = defineProps<
   SplitterGroupProps & { class?: HTMLAttributes['class'] }

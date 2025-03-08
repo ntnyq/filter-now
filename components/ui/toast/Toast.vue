@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ToastRoot, useForwardPropsEmits, type ToastRootEmits } from 'radix-vue'
+import { ToastRoot, useForwardPropsEmits, type ToastRootEmits } from 'reka-ui'
 import { computed } from 'vue'
-import { cn } from '@/utils/shadcn'
+import { cn } from '@/utils/libs/shadcn'
 import { toastVariants, type ToastProps } from '.'
 
 const props = defineProps<ToastProps>()
