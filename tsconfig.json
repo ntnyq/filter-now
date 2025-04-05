@@ -5,7 +5,7 @@
       "@": ["."],
       "@/*": ["./*"]
     },
-    "types": ["unplugin-icons/types/vue", "chrome"],
+    "types": ["unplugin-icons/types/vue"],
     "erasableSyntaxOnly": true,
     "libReplacement": false
   }

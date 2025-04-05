@@ -2,9 +2,8 @@
  * @file Context background
  */
 
-import { browser } from 'wxt/browser'
-import { defineBackground } from 'wxt/sandbox'
 import { COMMANDS } from '@/constants/command'
+import { browser, defineBackground } from '#imports'
 
 export default defineBackground({
   main() {

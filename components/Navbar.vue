@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { browser } from 'wxt/browser'
 import { isDark, toggleDark } from '@/composables/dark'
 import { META } from '@/constants/meta'
 import { version } from '@/package.json'
+import { browser } from '#imports'
 
 const iconUrl = browser.runtime.getURL('/icons/48.png')
 </script>

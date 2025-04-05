@@ -6,12 +6,9 @@
 import VueComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'wxt'
 import { resolve } from './scripts/utils'
-import type { Manifest } from 'wxt/browser'
-import type { Command } from '@/constants/command'
+// import type { Command } from '@/constants/command'
 
 export default defineConfig({
-  extensionApi: 'chrome',
-
   modules: ['@wxt-dev/module-vue', '@wxt-dev/unocss', '@wxt-dev/auto-icons'],
 
   outDir: 'dist',
@@ -52,7 +49,7 @@ export default defineConfig({
           default: 'Alt+O',
         },
       },
-    } satisfies Record<Command, Manifest.WebExtensionManifestCommandsType>,
+    },
     content_security_policy: {
       extension_pages: `script-src 'self' 'wasm-unsafe-eval'; object-src 'self';`,
     },

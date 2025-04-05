@@ -2,9 +2,9 @@
  * @file useStorage
  */
 
-import { storage } from 'wxt/storage'
-import type { StorageItemKey } from 'wxt/storage'
+import { storage } from '#imports'
 import type { JsonValue } from '@/types'
+import type { StorageItemKey } from '#imports'
 
 export interface UseStorageOptions<T> {
   mode?: 'local' | 'session'
