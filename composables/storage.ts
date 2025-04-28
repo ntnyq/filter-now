@@ -3,8 +3,8 @@
  */
 
 import { storage } from '#imports'
-import type { JsonValue } from '@/types'
 import type { StorageItemKey } from '#imports'
+import type { JsonValue } from '@/types'
 
 export interface UseStorageOptions<T> {
   mode?: 'local' | 'session'
