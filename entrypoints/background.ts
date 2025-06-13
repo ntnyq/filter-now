@@ -2,8 +2,8 @@
  * @file Context background
  */
 
-import { COMMANDS } from '@/constants/command'
 import { browser, defineBackground } from '#imports'
+import { COMMANDS } from '@/constants/command'
 
 export default defineBackground({
   main() {
