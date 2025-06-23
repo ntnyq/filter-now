@@ -79,8 +79,8 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4(@types/eslint@9.6.1)(@typescript-eslint/utils@8.30.1(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.13)(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3)
       '@ntnyq/prettier-config':
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       '@vitejs/plugin-vue':
         specifier: ^5.2.3
         version: 5.2.3(vite@6.2.5(@types/node@22.14.0)(jiti@2.4.2)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
@@ -641,8 +641,8 @@ packages:
       eslint-plugin-unused-imports:
         optional: true
 
-  '@ntnyq/prettier-config@2.0.0':
-    resolution: {integrity: sha512-cgb+VCW8+BJzZBSURgDEjMNt0JNiZ+Kx4k2rC54Igs+VmRiI2J8jPTVVqEKG2urhGLcUA2IuCE6ZDMMKuibN3Q==}
+  '@ntnyq/prettier-config@3.0.1':
+    resolution: {integrity: sha512-Mi8pvBu6Z0HsC6vFQQ9ucmEiot4GJ3AbwfU8J626m5oll9mgF5InO+pdGnFVtr9e82YHUHA67MihHLYT7CDhHw==}
 
   '@ntnyq/utils@0.6.4':
     resolution: {integrity: sha512-he9j01PRMEZHIvEBkiS55Fu+DJoV/swJIThEJ1+gOVCUDEDss8toAmeFVw02ALsF5aD9QHcFv7raT1deAgDEwg==}
@@ -4676,7 +4676,7 @@ snapshots:
       - typescript
       - vitest
 
-  '@ntnyq/prettier-config@2.0.0': {}
+  '@ntnyq/prettier-config@3.0.1': {}
 
   '@ntnyq/utils@0.6.4': {}
 
