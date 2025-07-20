@@ -11,7 +11,9 @@ const appStore = useAppStore()
 const imageWrapperRef = useTemplateRef('imageWrapperRef')
 
 const imageWrapperStyle = computed(() => {
-  if (!appStore.filterValues) return ''
+  if (!appStore.filterValues) {
+    return ''
+  }
   const filterValues = filterList.map(filter => {
     if (appStore.filterValues![filter.name]?.[0] === filter.defaultValue) {
       return ''
@@ -23,7 +25,9 @@ const imageWrapperStyle = computed(() => {
 
 actionBus.on(action => {
   if (action === ACTION.download) {
-    if (!imageWrapperRef.value) return
+    if (!imageWrapperRef.value) {
+      return
+    }
     downloadImageFromDom(imageWrapperRef.value)
   }
 })

@@ -26,7 +26,9 @@ export const useAppStore = defineStore('app', () => {
         return `${key}(${value[0]}${filterList.find(filter => filter.name === key)?.unit})`
       })
       .join(' ')
-    if (!filters.length) return ''
+    if (!filters.length) {
+      return ''
+    }
     return `filter: ${filters};`
   })
 

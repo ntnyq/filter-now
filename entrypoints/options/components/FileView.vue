@@ -18,14 +18,18 @@ const dropZoneRef = useTemplateRef('dropZoneRef')
 const { isOverDropZone } = useDropZone(dropZoneRef, {
   onDrop(files, event) {
     event.preventDefault()
-    if (!files?.length) return
+    if (!files?.length) {
+      return
+    }
     tryLoadFile(files[0])
   },
   dataTypes: ['image/png', 'image/jpeg', 'image/jpg'],
 })
 
 handleFileDialogChange(files => {
-  if (!files?.length) return
+  if (!files?.length) {
+    return
+  }
   tryLoadFile(files[0])
 })
 
@@ -34,7 +38,9 @@ function tryLoadFile(file: File) {
 
   reader.addEventListener('load', (event: ProgressEvent<FileReader>) => {
     const content = event.target?.result ?? ''
-    if (typeof content !== 'string') return
+    if (typeof content !== 'string') {
+      return
+    }
     appStore.setImageDataUrl(content)
     resetSelectedFiles()
   })

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
+import { browser } from '#imports'
 import { isDark, toggleDark } from '@/composables/dark'
 import { META } from '@/constants/meta'
 import { version } from '@/package.json'
-import { browser } from '#imports'
 
 const iconUrl = browser.runtime.getURL('/icons/48.png')
 </script>
@@ -10,7 +10,7 @@ const iconUrl = browser.runtime.getURL('/icons/48.png')
 <template>
   <div class="relative z-40 border border-b bg-background/80 backdrop-blur-lg">
     <div
-      class="mx-auto h-$h-navbar max-w-screen-2xl flex items-center justify-between container"
+      class="container mx-auto h-$h-navbar max-w-screen-2xl flex items-center justify-between"
     >
       <div class="mr-4 hidden gap-1 md:mr-1 md:flex">
         <img
