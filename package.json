@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.4",
   "private": true,
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.1",
   "description": "An offline tool help user to add CSS based filter to image and save it.",
   "repository": "ntnyq/filter-now",
   "scripts": {
@@ -32,17 +32,17 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "html2canvas": "^1.4.1",
-    "lucide-vue-next": "^0.561.0",
+    "lucide-vue-next": "^0.562.0",
     "pinia": "^3.0.4",
     "reka-ui": "^2.6.1",
     "tailwind-merge": "^3.4.0",
     "uncase": "^0.2.0",
-    "vue": "^3.5.25",
+    "vue": "^3.5.26",
     "vue-router": "^4.6.4",
     "vue-sonner": "^2.0.9"
   },
   "devDependencies": {
-    "@iconify-json/radix-icons": "^1.2.5",
+    "@iconify-json/radix-icons": "^1.2.6",
     "@iconify-json/ri": "^1.2.6",
     "@ntnyq/eslint-config": "^5.8.0",
     "@ntnyq/prettier-config": "^3.0.1",
@@ -62,9 +62,9 @@
     "unocss-preset-shadcn": "^1.0.1",
     "unplugin-icons": "^22.5.0",
     "unplugin-vue-components": "^30.0.0",
-    "vite": "^7.2.7",
-    "vue-tsc": "^3.1.8",
-    "wxt": "^0.20.11"
+    "vite": "^7.3.0",
+    "vue-tsc": "^3.2.1",
+    "wxt": "^0.20.13"
   },
   "nano-staged": {
     "*.{js,ts,cjs,mjs,vue,md,yml,yaml,toml,json}": "eslint --fix",
