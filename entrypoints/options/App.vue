@@ -14,9 +14,7 @@ const appStore = useAppStore()
     >
       <Navbar />
       <div class="relative h-[calc(100vh-var(--h-navbar))]">
-        <div
-          class="container mx-auto h-full max-w-screen-2xl border border p-0"
-        >
+        <div class="container mx-auto h-full max-w-screen-2xl border p-0">
           <ResizablePanelGroup direction="horizontal">
             <ResizablePanel :min-size="30">
               <Main />
