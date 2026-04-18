@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { reactiveOmit } from '@vueuse/core'
 import { X } from 'lucide-vue-next'
-import { ToastClose, type ToastCloseProps } from 'reka-ui'
-import { computed, type HTMLAttributes } from 'vue'
+import { ToastClose } from 'reka-ui'
 import { cn } from '@/utils/libs/shadcn'
+import type { ToastCloseProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
 
 const props = defineProps<
   ToastCloseProps & {
@@ -10,11 +12,7 @@ const props = defineProps<
   }
 >()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, 'class')
 </script>
 
 <template>

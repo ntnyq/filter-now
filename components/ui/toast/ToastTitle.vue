@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import { ToastTitle, type ToastTitleProps } from 'reka-ui'
-import { computed, type HTMLAttributes } from 'vue'
+import { reactiveOmit } from '@vueuse/core'
+import { ToastTitle } from 'reka-ui'
 import { cn } from '@/utils/libs/shadcn'
+import type { ToastTitleProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
 
 const props = defineProps<
   ToastTitleProps & { class?: HTMLAttributes['class'] }
 >()
 
-const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+const delegatedProps = reactiveOmit(props, 'class')
 </script>
 
 <template>
