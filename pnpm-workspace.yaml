@@ -8,3 +8,9 @@ onlyBuiltDependencies:
   - spawn-sync
   - unrs-resolver
   - vue-demi
+allowBuilds:
+  esbuild: true
+  sharp: true
+  spawn-sync: true
+  unrs-resolver: true
+  vue-demi: true
