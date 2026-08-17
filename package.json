@@ -27,7 +27,7 @@
     "@shikijs/engine-javascript": "^4.2.0",
     "@shikijs/langs": "^4.2.0",
     "@shikijs/themes": "^4.2.0",
-    "@tanstack/vue-table": "^8.21.3",
+    "@tanstack/vue-table": "^9.1.2",
     "@unocss/reset": "^66.7.2",
     "@vueuse/core": "^14.3.0",
     "class-variance-authority": "^0.7.1",
