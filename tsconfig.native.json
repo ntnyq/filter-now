@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "./wxt.config.ts",
+    "./uno.config.ts",
+    "./tailwind.config.ts",
+    "./.wxt/wxt.d.ts"
+  ],
+  "exclude": []
+}
